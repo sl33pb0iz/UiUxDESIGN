@@ -50,8 +50,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02761efe598a45c98fa1baf4d446c6a7, type: 3}
   m_Name: Splash Flow Graph
   m_EditorClassIdentifier: 
-  EditorPosition: {x: -120, y: 184, z: 0}
-  EditorScale: {x: 1, y: 1, z: 1}
+  EditorPosition: {x: 116, y: 322.4, z: 0}
+  EditorScale: {x: 0.65751624, y: 0.65751624, z: 1}
   Id: 0dd4719f-7a86-4a0e-a756-3070d2b81513
   GraphName: Flow Graph
   GraphDescription: 
@@ -129,7 +129,7 @@ MonoBehaviour:
   CanBeDeleted: 1
   Passthrough: 0
   ClearGraphHistory: 0
-  Position: {x: 724.8, y: 1}
+  Position: {x: 758.8835, y: 1.6000061}
   OnEnterShowViews:
   - Id:
       Category: Splash
@@ -257,7 +257,7 @@ MonoBehaviour:
   CanBeDeleted: 1
   Passthrough: 1
   ClearGraphHistory: 0
-  Position: {x: 438.59998, y: 1}
+  Position: {x: 433.7936, y: 7.9999237}
   GetSceneBy: 0
   LoadSceneMode: 1
   AllowSceneActivation: 1
