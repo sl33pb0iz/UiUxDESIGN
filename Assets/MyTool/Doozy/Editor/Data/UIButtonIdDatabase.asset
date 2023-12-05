@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd14fc30d004417a423cfdef2bd9ccf, type: 3}
+  m_Name: UIButtonIdDatabase
+  m_EditorClassIdentifier: 
+  Database:
+    Items:
+    - Category: Character
+      Name: Back
+    - Category: Character
+      Name: CharacterList
+    - Category: CharacterList
+      Name: Back
+    - Category: Clan
+      Name: Back
+    - Category: Equipment
+      Name: Back
+    - Category: Iventory
+      Name: Back
+    - Category: Master
+      Name: Battle
+    - Category: Master
+      Name: Character
+    - Category: Master
+      Name: Clan
+    - Category: Master
+      Name: Equipment
+    - Category: Master
+      Name: Inventory
+    - Category: Master
+      Name: Mission
+    - Category: Master
+      Name: Ranking
+    - Category: Master
+      Name: Rune
+    - Category: Master
+      Name: SeasonPass
+    - Category: Master
+      Name: Shop
+    - Category: Master
+      Name: Stage
+    - Category: Mission
+      Name: Back
+    - Category: None
+      Name: None
+    - Category: Ranking
+      Name: Back
+    - Category: Rune
+      Name: Back
+    - Category: SeasonPass
+      Name: Back
+    - Category: Shared
+      Name: Back
+    - Category: Shared
+      Name: Close
+    - Category: Shop
+      Name: Back
+    - Category: Splash
+      Name: Back
+    - Category: Splash
+      Name: Close
+    - Category: Splash
+      Name: FacebookSignIn
+    - Category: Splash
+      Name: ForgotPassword
+    - Category: Splash
+      Name: GameCenterSignIn
+    - Category: Splash
+      Name: GoogleSignIn
+    - Category: Splash
+      Name: GuestLoginPopUp
+    - Category: Splash
+      Name: SignIn
+    - Category: Splash
+      Name: SignUp
+    - Category: Splash
+      Name: SignUpPopUp
+    - Category: Splash
+      Name: TaptoStart
+    - Category: StageSelection
+      Name: Back

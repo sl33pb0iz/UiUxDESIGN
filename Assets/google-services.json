@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "611004791975",
+    "firebase_url": "https://ui---ux-design-default-rtdb.firebaseio.com",
+    "project_id": "ui---ux-design",
+    "storage_bucket": "ui---ux-design.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611004791975:android:bad782039ebd5b9541af82",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.com.unity.template.mobile2D"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc1bc5fmnxCUA9oCA510NOXkm-Iua0-YQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
