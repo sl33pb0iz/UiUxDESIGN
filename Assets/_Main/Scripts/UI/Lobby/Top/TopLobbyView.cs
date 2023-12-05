@@ -7,20 +7,24 @@ using UnityEngine;
 public class TopLobbyView : MonoBehaviour
 {
     [Title("BUTTON", titleAlignment: TitleAlignments.Centered)]
-    [SerializeField] private UIButton buttonSettings;
+    [SerializeField] private UIButton _buttonSettings;
+
+    [Title("COMPONENT", titleAlignment: TitleAlignments.Centered)]
+    [SerializeField] private StatusBarGroupView _statusBarView;
+    [SerializeField] private UserInfoView _userInfoView;
 
     private void OnEnable()
     {
-        buttonSettings.onLeftClickEvent.AddListener(PopupSettings);
+        _buttonSettings.onLeftClickEvent.AddListener(PopupSettings);
     }
 
     private void OnDisable()
     {
-        buttonSettings.onLeftClickEvent.RemoveListener(PopupSettings);
+        _buttonSettings.onLeftClickEvent.RemoveListener(PopupSettings);
     }
 
     private void PopupSettings()
     {
-        Debug.Log("settings");
+        Debug.Log("hahahaha");
     }
 }

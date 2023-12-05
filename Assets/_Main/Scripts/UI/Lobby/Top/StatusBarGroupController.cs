@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StatusBarView : MonoBehaviour
+public class StatusBarGroupController : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
