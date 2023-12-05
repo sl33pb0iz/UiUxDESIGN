@@ -37,6 +37,8 @@ public class SignInView : MonoBehaviour
     [Title("PREFAB", titleAlignment: TitleAlignments.Centered)]
     [SerializeField] private UIPopup AccountSignInPopupPrefab;
 
+
+
     [Inject]
     private SignInViewController _loginFormController;
 

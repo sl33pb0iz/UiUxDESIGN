@@ -31,19 +31,39 @@ MonoBehaviour:
     - Category: Master
       Name: Character
     - Category: Master
+      Name: Chat
+    - Category: Master
+      Name: Chess
+    - Category: Master
       Name: Clan
     - Category: Master
+      Name: Energy
+    - Category: Master
       Name: Equipment
+    - Category: Master
+      Name: Friends
+    - Category: Master
+      Name: Gem
+    - Category: Master
+      Name: Gold
+    - Category: Master
+      Name: Inbox
     - Category: Master
       Name: Inventory
     - Category: Master
       Name: Mission
     - Category: Master
+      Name: Notice
+    - Category: Master
       Name: Ranking
+    - Category: Master
+      Name: Rewards
     - Category: Master
       Name: Rune
     - Category: Master
       Name: SeasonPass
+    - Category: Master
+      Name: Settings
     - Category: Master
       Name: Shop
     - Category: Master
