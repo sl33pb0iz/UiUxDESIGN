@@ -2,8 +2,11 @@ using Doozy.Runtime.Signals;
 using Doozy.Runtime.UIManager.Components;
 using Doozy.Runtime.UIManager.Containers;
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -37,17 +40,17 @@ public class SignInView : MonoBehaviour
     [Title("PREFAB", titleAlignment: TitleAlignments.Centered)]
     [SerializeField] private UIPopup AccountSignInPopupPrefab;
 
-
-
     [Inject]
     private SignInViewController _loginFormController;
 
     [Inject]
-    private IObjectResolver container;
-    
+    private readonly IObjectResolver _container;
+
+    [Inject]
+    private readonly Func<IGuestAccountService, GuestSignInFormController> factory;
+
     private ICommand _accountSignedInSignal;
     private ICommand _onGuestAccountSignInSignal;
-
 
     private void Awake()
     {
@@ -56,11 +59,13 @@ public class SignInView : MonoBehaviour
 
         _loginFormController.AccountSignedInSignal = _accountSignedInSignal;
         _loginFormController.OnGuestAccountSignInSignal = _onGuestAccountSignInSignal;
+
     }
 
     private void Start()
     {
         ViewState = SignInViewState.SignIn;
+        
     }
 
     private void OnEnable()
@@ -114,13 +119,13 @@ public class SignInView : MonoBehaviour
     public void SetGuestSignInFormVisibility()
     {
         var popup = UIPopup.Get(AccountSignInPopupPrefab.name);
-
         var form = popup.GetComponent<GuestSignInForm>();
-        
-        using(var factory = new SignInFormFactory(container, form))
-        {
-            factory.Create();
-        }
+
+        //Init MVC
+        var service = _container.Resolve<IGuestAccountService>();
+        var controller = factory.Invoke(service);
+        form._guestSignInFormController = controller;
+        _container.Inject(form);
 
         popup.Show();
     }
