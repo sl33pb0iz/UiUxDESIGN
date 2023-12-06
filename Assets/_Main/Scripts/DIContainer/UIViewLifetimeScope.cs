@@ -25,5 +25,22 @@ public class UIViewLifetimeScope : LifetimeScope
 
         //View
         builder.RegisterComponent(_signInView);
+
+        //Factory 
+        builder.RegisterFactory<IGuestAccountService, GuestSignInFormController>(container =>
+        {
+            return service =>
+            {
+                return new GuestSignInFormController(service);
+            };
+        }, Lifetime.Scoped);
+
+        builder.RegisterFactory<IGuestAccountService, GuestSignUpFormController>(container =>
+        {
+            return service =>
+            {
+                return new GuestSignUpFormController(service);
+            };
+        }, Lifetime.Scoped);
     }
 }

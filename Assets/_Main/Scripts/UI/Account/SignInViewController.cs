@@ -9,7 +9,7 @@ using UnityAtoms.Tags;
 using VContainer;
 using VContainer.Unity;
 
-public class SignInViewController 
+public class SignInViewController
 {
     // Service
     private readonly IPluginAccountService GameCenterAccountService;
@@ -63,6 +63,7 @@ public class SignInViewController
             OnGuestAccountSignInSignal.Execute(e.ToString());
         }
     }
+
 }
 
 

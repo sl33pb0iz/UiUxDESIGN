@@ -1,6 +1,7 @@
 ﻿using Doozy.Runtime.UIManager.Components;
 using Doozy.Runtime.UIManager.Containers;
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,27 +28,30 @@ public class GuestSignInForm : MonoBehaviour
 
     [Title("PREFAB", titleAlignment: TitleAlignments.Centered)]
     [SerializeField] private UIPopup _accountSignUpFormPrefab; 
-
-    [HideInInspector] public GuestSignInFormController _guestSignInFormController;
-
     
-    public IObjectResolver container;
+    public GuestSignInFormController _guestSignInFormController;
+
+    [Inject]
+    public IObjectResolver _container;
+
+    [Inject]
+    private readonly Func<IGuestAccountService, GuestSignUpFormController> factory;
+
     private ICommand _signedInSignal;
     
     private UIPopup _popupController; 
+    private void Awake()
+    {
+        _popupController = GetComponent<UIPopup>();
+    }
 
-    public void Init()
+    private void Start()
     {
         _signedInSignal = new RelayCommand<string>(_ => true, _ => SignedIn());
         _guestSignInFormController.SignedInSignal = _signedInSignal;
 
         _buttonSignIn.onLeftClickEvent.AddListener(_guestSignInFormController.ControllerSignIn);
         _buttonSignUp.onLeftClickEvent.AddListener(SetGuestSignUpFormVisibility);
-    }
-
-    private void Awake()
-    {
-        _popupController = GetComponent<UIPopup>();
     }
 
     private void OnDisable()
@@ -61,7 +65,6 @@ public class GuestSignInForm : MonoBehaviour
         _guestSignInFormController.Dispose();
     }
 
-
     private void SignedIn()
     {
         _popupController.Hide();
@@ -72,10 +75,12 @@ public class GuestSignInForm : MonoBehaviour
         var popup = UIPopup.Get(_accountSignUpFormPrefab.name);
 
         var form = popup.GetComponent<GuestSignUpForm>();
-        using (var factory = new SignUpFormFactory(container, form))
-        {
-            factory.Create();
-        }
+
+        //Init MVC
+        var service = _container.Resolve<IGuestAccountService>();
+        var controller = factory.Invoke(service);
+        form._guestSignUpFormController = controller;
+        _container.Inject(form);
 
         popup.Show();
         _popupController.Hide();
