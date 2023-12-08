@@ -47,6 +47,7 @@ public class GuestSignInFormController : IDisposable
             {
                 if (GuestAccountService != null)
                 {
+                    
                     GuestAccountService.PropertyChanged -= SignInAction;
                     GuestAccountService = null;
                 }

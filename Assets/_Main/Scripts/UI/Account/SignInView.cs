@@ -1,4 +1,4 @@
-using Doozy.Runtime.Signals;
+﻿using Doozy.Runtime.Signals;
 using Doozy.Runtime.UIManager.Components;
 using Doozy.Runtime.UIManager.Containers;
 using Sirenix.OdinInspector;
@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies.Sqlite;
+using UnityEditor.Build.Pipeline;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -46,11 +47,11 @@ public class SignInView : MonoBehaviour
     [Inject]
     private readonly IObjectResolver _container;
 
-    [Inject]
-    private readonly Func<IGuestAccountService, GuestSignInFormController> factory;
-
     private ICommand _accountSignedInSignal;
     private ICommand _onGuestAccountSignInSignal;
+
+    [Inject]
+    private Func<IGuestAccountService, GuestSignInFormController> _factory; 
 
     private void Awake()
     {
@@ -122,13 +123,13 @@ public class SignInView : MonoBehaviour
         var form = popup.GetComponent<GuestSignInForm>();
 
         //Init MVC
-        var service = _container.Resolve<IGuestAccountService>();
-        var controller = factory.Invoke(service);
+        var controller = _factory(_container.Resolve<IGuestAccountService>());
         form._guestSignInFormController = controller;
         _container.Inject(form);
 
         popup.Show();
     }
+
 }
 
 public enum SignInViewState

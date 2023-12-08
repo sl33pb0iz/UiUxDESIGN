@@ -19,13 +19,13 @@ public class GuestSignUpForm : MonoBehaviour
 
     private ICommand _signedUpSignal;
 
-    public void Init()
+    private void SignedIn()
     {
       
     }
 
-    private void SignedIn()
+    private void OnDestroy()
     {
-      
+        _guestSignUpFormController.Dispose();
     }
 }
