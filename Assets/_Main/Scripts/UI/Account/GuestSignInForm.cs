@@ -34,8 +34,6 @@ public class GuestSignInForm : MonoBehaviour
     [Inject]
     public IObjectResolver _container;
 
-    [Inject]
-    private readonly Func<IGuestAccountService, GuestSignUpFormController> factory;
 
     private ICommand _signedInSignal;
     
@@ -73,18 +71,18 @@ public class GuestSignInForm : MonoBehaviour
     public void SetGuestSignUpFormVisibility()
     {
         var popup = UIPopup.Get(_accountSignUpFormPrefab.name);
-
         var form = popup.GetComponent<GuestSignUpForm>();
 
         //Init MVC
+        var factory = _container.Resolve<Func<IGuestAccountService, GuestSignUpFormController>>();
         var service = _container.Resolve<IGuestAccountService>();
         var controller = factory.Invoke(service);
+        
         form._guestSignUpFormController = controller;
         _container.Inject(form);
 
         popup.Show();
         _popupController.Hide();
-
     }
 
 }
