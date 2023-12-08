@@ -181,13 +181,14 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAAAAABAEAAAAAAAAAAIAAQAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAACAAAABAEAAAAACAAAAIAAQAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\_Main\Scripts\UI\NetworkConnection\NetworkErrorNotifyController.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="_connectionService" />
       <Field Name="_applicationService" />
     </ShowAsAssociation>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="NetworkErrorNotifyView" Collapsed="true">
     <Position X="19.5" Y="6.75" Width="2" />
@@ -198,7 +199,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAQAAAAAAAAAAAAACAAAAAAAEAACAg=</HashCode>
+      <HashCode>AAABAAAAACAAAAAQAAAAAAAAAAAAACAIAAAAAEAACAg=</HashCode>
       <FileName>Assets\_Main\Scripts\UI\NetworkConnection\NetworkErrorNotifyView.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -282,11 +283,11 @@
       <Field Name="m_service" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="EULAPolicyNotifyForm" Collapsed="true">
-    <Position X="30.75" Y="6.75" Width="2" />
+  <Class Name="EULAPolicyNotifyView" Collapsed="true">
+    <Position X="31" Y="6.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AABAQAAAACAAAAIAgIAAAAAAAAAAAAAIAAAAAAAACgA=</HashCode>
-      <FileName>Assets\_Main\Scripts\UI\EULAPolicy\EULAPolicyNotifyForm.cs</FileName>
+      <FileName>Assets\_Main\Scripts\UI\EULAPolicy\EULAPolicyNotifyView.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="m_controller" />
