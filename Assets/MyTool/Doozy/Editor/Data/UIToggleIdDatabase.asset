@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: UIToggleIdDatabase
   m_EditorClassIdentifier: 
   Database:
-    Items: []
+    Items:
+    - Category: None
+      Name: None
+    - Category: Setting
+      Name: PushAlarm
+    - Category: Setting
+      Name: Vibration

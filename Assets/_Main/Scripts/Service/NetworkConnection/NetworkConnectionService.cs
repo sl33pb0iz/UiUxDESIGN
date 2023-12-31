@@ -20,7 +20,6 @@ public class NetworkConnectionService : INotifyPropertyChanged, ITickable
             if (_isConnected == value) { return; }
 
             _isConnected = value;
-            Debug.Log(_isConnected);
             OnPropertyChanged(UIStringHelper.NetworkConnectedChanged);
         }
     }

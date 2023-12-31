@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Database:
     Items:
+    - Category: InGame
+      Name: Battle
+    - Category: Master
+      Name: Battle
     - Category: Master
       Name: Card
     - Category: Master

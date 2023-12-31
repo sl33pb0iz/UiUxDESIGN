@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: UISliderIdDatabase
   m_EditorClassIdentifier: 
   Database:
-    Items: []
+    Items:
+    - Category: None
+      Name: None
+    - Category: Setting
+      Name: Music
+    - Category: Setting
+      Name: SoundFX
