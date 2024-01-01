@@ -16,6 +16,12 @@ MonoBehaviour:
     Items:
     - Category: Character
       Name: CharacterList
+    - Category: InGame
+      Name: Pause
+    - Category: InGame
+      Name: Play
+    - Category: Master
+      Name: BattleVS
     - Category: Master
       Name: Character
     - Category: Master
@@ -47,6 +53,6 @@ MonoBehaviour:
     - Category: Shared
       Name: NetworkError
     - Category: Splash
-      Name: Loader
+      Name: Home
     - Category: Splash
-      Name: Login
+      Name: Loader

@@ -12,5 +12,9 @@ EditorBuildSettings:
     path: Assets/_Main/Scene/Master Scene.unity
     guid: 2378f4cbbd0f02542b2644459c49221c
   m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 62d2d783eb06b48459d1bc06e5e1d38d, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 3226a767ae6a6e94082fa05e65f9e22c, type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: de77cfba4afd0d74292823dab3344a19, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 70e21b12b16cae843b1fdc47a58d9a52, type: 2}
+    com.unity.addressableassets: {fileID: 11400000, guid: c37236643c662f04db76e6bff8f8f78c, type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 26aeb9bdce59dd842af402235fb8d31e, type: 2}

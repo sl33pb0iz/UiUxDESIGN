@@ -18,6 +18,10 @@ namespace Doozy.Runtime.UIManager.Containers
         public static void Show(UIViewId.Character id, bool instant = false) => Show(nameof(UIViewId.Character), id.ToString(), instant);
         public static void Hide(UIViewId.Character id, bool instant = false) => Hide(nameof(UIViewId.Character), id.ToString(), instant);
 
+        public static IEnumerable<UIView> GetViews(UIViewId.InGame id) => GetViews(nameof(UIViewId.InGame), id.ToString());
+        public static void Show(UIViewId.InGame id, bool instant = false) => Show(nameof(UIViewId.InGame), id.ToString(), instant);
+        public static void Hide(UIViewId.InGame id, bool instant = false) => Hide(nameof(UIViewId.InGame), id.ToString(), instant);
+
         public static IEnumerable<UIView> GetViews(UIViewId.Master id) => GetViews(nameof(UIViewId.Master), id.ToString());
         public static void Show(UIViewId.Master id, bool instant = false) => Show(nameof(UIViewId.Master), id.ToString(), instant);
         public static void Hide(UIViewId.Master id, bool instant = false) => Hide(nameof(UIViewId.Master), id.ToString(), instant);
@@ -40,8 +44,15 @@ namespace Doozy.Runtime.UIManager
             CharacterList
         }
 
+        public enum InGame
+        {
+            Pause,
+            Play
+        }
+
         public enum Master
         {
+            BattleVS,
             Character,
             Clan,
             Equipment,
@@ -63,8 +74,8 @@ namespace Doozy.Runtime.UIManager
         }
         public enum Splash
         {
-            Loader,
-            Login
+            Home,
+            Loader
         }    
     }
 }

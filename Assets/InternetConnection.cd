@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NetworkConnectionService" Collapsed="true">
+    <Position X="13.5" Y="7.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAABAIEAAAAAAgAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Assets\_Main\Scripts\Service\NetworkConnection\NetworkConnectionService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NetworkErrorFormController" Collapsed="true">
+    <Position X="16" Y="5.25" Width="2.25" />
+    <AssociationLine Name="_connectionService" Type="NetworkConnectionService" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.688" Y="5.812" />
+        <Point X="16.688" Y="7.75" />
+        <Point X="15.75" Y="7.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_applicationService" Type="ApplicationService" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.562" Y="5.812" />
+        <Point X="17.562" Y="7.75" />
+        <Point X="18" Y="7.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAACAAAABAEAAAAACAAAAIAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\_Main\Scripts\UI\Shared\Internet Connection\NetworkErrorFormController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_connectionService" />
+      <Field Name="_applicationService" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NetworkErrorFormView" Collapsed="true">
+    <Position X="16.25" Y="3.25" Width="2" />
+    <AssociationLine Name="_controller" Type="NetworkErrorFormController" FixedToPoint="true">
+      <Path>
+        <Point X="17.188" Y="3.941" />
+        <Point X="17.188" Y="5.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAAAAAQAAAAAAAAAAAAACAIAAAAAEAACAg=</HashCode>
+      <FileName>Assets\_Main\Scripts\UI\Shared\Internet Connection\NetworkErrorFormView.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_controller" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ApplicationService" Collapsed="true">
+    <Position X="18" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAABAIAAAAAAAgAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Assets\_Main\Scripts\Service\Application\ApplicationService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NetworkErrorPopupController" Collapsed="true">
+    <Position X="11" Y="5.25" Width="2.25" />
+    <AssociationLine Name="_connectionService" Type="NetworkConnectionService" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.631" Y="5.812" />
+        <Point X="12.631" Y="7.781" />
+        <Point X="13.5" Y="7.781" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AABAAAAIAAAAAAAAAAAAAAAAAAAIBAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\_Main\Scripts\UI\Shared\Internet Connection\NetworkErrorPopupController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_connectionService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="NetworkErrorPopupView" Collapsed="true">
+    <Position X="11.25" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Assets\_Main\Scripts\UI\Shared\Internet Connection\NetworkErrorPopupView.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_controller" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

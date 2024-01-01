@@ -24,6 +24,8 @@ MonoBehaviour:
       Name: Back
     - Category: Equipment
       Name: Back
+    - Category: InGame
+      Name: Pause
     - Category: Iventory
       Name: Back
     - Category: Master
@@ -68,16 +70,40 @@ MonoBehaviour:
       Name: Shop
     - Category: Master
       Name: Stage
+    - Category: Master
+      Name: UserInfo
     - Category: Mission
       Name: Back
     - Category: None
       Name: None
+    - Category: Pause
+      Name: GiveUp
+    - Category: Pause
+      Name: Restart
+    - Category: Pause
+      Name: Resume
+    - Category: Pause
+      Name: Setting
     - Category: Ranking
       Name: Back
     - Category: Rune
       Name: Back
     - Category: SeasonPass
       Name: Back
+    - Category: Setting
+      Name: About
+    - Category: Setting
+      Name: DeleteAccount
+    - Category: Setting
+      Name: Language
+    - Category: Setting
+      Name: Like
+    - Category: Setting
+      Name: Rate
+    - Category: Setting
+      Name: Support
+    - Category: Setting
+      Name: UserID
     - Category: Shared
       Name: Back
     - Category: Shared

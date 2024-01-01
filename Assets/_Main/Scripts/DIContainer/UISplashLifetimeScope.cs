@@ -1,9 +1,4 @@
-using Doozy.Editor.Reactor.Components;
-using Doozy.Runtime.UIManager;
-using Doozy.Runtime.UIManager.Containers;
-using JetBrains.Annotations;
 using Sirenix.OdinInspector;
-using System;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -11,8 +6,8 @@ using VContainer.Unity;
 public class UISplashLifetimeScope : LifetimeScope
 {
     [Title("VIEW", titleAlignment: TitleAlignments.Centered)]
-    [SerializeField] SignInView _signInView;
-    [SerializeField] UISplashPopupFactory _signInManager;
+    [SerializeField] HomeSplashView _homeSplashView;
+    [SerializeField] AccountPopupView _splashPopupView;
 
 
     protected override void Configure(IContainerBuilder builder)
@@ -23,7 +18,7 @@ public class UISplashLifetimeScope : LifetimeScope
         builder.Register<IPluginAccountService, GameCenterAccountService>(Lifetime.Singleton);
         builder.Register<IPluginAccountService, FacebookAccountService>(Lifetime.Singleton);
         builder.Register<IPluginAccountService, GoogleAccountService>(Lifetime.Singleton);
-        builder.Register<IGuestAccountService, GuestAccountService>(Lifetime.Singleton);
+        builder.Register<IAccountService, AccountService>(Lifetime.Singleton);
 
         //Network Connection
         builder.Register<NetworkConnectionService>(Lifetime.Singleton).As<ITickable>().AsSelf();
@@ -33,40 +28,46 @@ public class UISplashLifetimeScope : LifetimeScope
 
         //Policy
         builder.Register<EULAPolicyService>(Lifetime.Singleton);
+
+        //Create Popup
+        builder.Register<SignInPopupService>(Lifetime.Singleton).As<IPopupService>().AsSelf();
+        builder.Register<SignUpPopupService>(Lifetime.Singleton).As<IPopupService>().AsSelf();
+
         #endregion
 
         #region Controller
-        builder.Register<SignInViewController>(Lifetime.Singleton);
-        builder.Register<CheckConnectionController>(Lifetime.Singleton);
-        builder.Register<CheckEULAPolicyController>(Lifetime.Singleton).As<IPostStartable>().AsSelf();
+        builder.Register<HomeSplashViewController>(Lifetime.Singleton);
+        builder.Register<NetworkErrorPopupController>(Lifetime.Transient);
+        builder.Register<CheckEULAPolicyController>(Lifetime.Transient).As<IPostStartable>().AsSelf();
+        builder.Register<AccountPopupController>(Lifetime.Singleton);
         #endregion
 
         #region View
-        builder.RegisterComponent(_signInView);
-        builder.RegisterComponent(_signInManager);
+        builder.RegisterComponent(_homeSplashView);
+        builder.RegisterComponent(_splashPopupView);
         #endregion
 
         #region Factory
-        builder.RegisterFactory<IGuestAccountService, GuestSignInFormController>(container =>
+        builder.RegisterFactory<IAccountService, IPopupService, IPopupService, SignInFormController>(container =>
         {
-            return service =>
+            return (accountService, signInPopupService, signUpPopupService) =>
             {
-                return new GuestSignInFormController(service);
+                return new SignInFormController(accountService, signInPopupService, signUpPopupService);
             };
         }, Lifetime.Singleton);
 
 
-        builder.RegisterFactory<IGuestAccountService, GuestSignUpFormController>(container =>
+        builder.RegisterFactory<IAccountService, IPopupService, IPopupService, SignUpFormController>(container =>
         {
-            return service =>
+            return (accountService, signInPopupService, signUpPopupService) =>
             {
-                return new GuestSignUpFormController(service);
+                return new SignUpFormController(accountService, signInPopupService, signUpPopupService);
             };
         }, Lifetime.Singleton);
 
-        builder.RegisterFactory<NetworkConnectionService, ApplicationService, NetworkErrorNotifyController>(container =>
+        builder.RegisterFactory<NetworkConnectionService, ApplicationService, NetworkErrorFormController>(container =>
         {
-            return (networkService, applicationService) => new NetworkErrorNotifyController(networkService, applicationService);
+            return (networkService, applicationService) => new NetworkErrorFormController(networkService, applicationService);
         }, Lifetime.Singleton);
 
         builder.RegisterFactory<EULAPolicyService, EULAPolicyNotifyController>(container =>
